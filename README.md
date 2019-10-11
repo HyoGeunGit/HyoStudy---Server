@@ -97,7 +97,7 @@
 
     userToken : {type : String} //유저 토큰
 
-    > Response
+ > Response
 
     HTTP 200 : {
          name : { type : String } // 훈련명
