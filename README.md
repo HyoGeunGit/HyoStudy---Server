@@ -53,6 +53,10 @@
       percent : { type : String } // 훈련 진행도
 
       count : {type : String } // 훈련 횟수
+      
+      userToken : {type: String} // 유저토큰
+      
+      ifFinish : {type :String} // 훈련 완료 유무
 
 > Response
 
@@ -78,6 +82,31 @@
          percent : { type : String } // 훈련 진행도
 
          count : {type : String } // 훈련 횟수
+         
+         ifFinish : {type :String} // 훈련 완료 유무
      } 
 
     HTTP 404 : { message : "Training Not Found!"}
+
+
+
+* POST /allJobList (Job과 Health가 있음 ex. /allJobList, /allHealthList)
+
+
+> Params
+
+    userToken : {type : String} //유저 토큰
+
+    > Response
+
+    HTTP 200 : {
+         name : { type : String } // 훈련명
+
+         percent : { type : String } // 훈련 진행도
+
+         count : {type : String } // 훈련 횟수
+         
+         ifFinish : {type :String} // 훈련 완료 유무
+     } 
+
+    HTTP 404 : { message : "User Training Not Found!"}
