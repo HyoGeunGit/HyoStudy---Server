@@ -57,5 +57,34 @@ function service(app, Health, Job, rndstring){
     return res.status(200).json({list : list})
   })
 
+  .post('/allJobList', async(req,res)=>{    
+    let result = await Job.find({userToken : req.body.userToken}).sort({ docNum : -1 });
+    let list = [];
+    for (var i=0; result[i] != null; i++) {
+        let json = {
+            name : result[i].name,
+            percent : result[i].percent,
+            ifFinish : result[i].ifFinish,
+            count : result[i].count
+        }
+        list.push(json)
+    }
+    return res.status(200).json({list : list})
+  })
+
+  .post('/allHealthList', async(req,res)=>{    
+    let result = await Health.find({userToken : req.body.userToken}).sort({ docNum : -1 });
+    let list = [];
+    for (var i=0; result[i] != null; i++) {
+        let json = {
+            name : result[i].name,
+            percent : result[i].percent,
+            ifFinish : result[i].ifFinish,
+            count : result[i].count
+        }
+        list.push(json)
+    }
+    return res.status(200).json({list : list})
+  })
 
 }

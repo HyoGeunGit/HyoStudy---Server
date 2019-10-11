@@ -20,6 +20,8 @@ var HealthSchema = mongoose.Schema({
   name : {type: String, required: true},
   percent : {type: String, required: true},
   count : {type: String, required: true},
+  userToken : {type : String},
+  ifFinish : {type : String },
   token : {type: String}
 });
 
@@ -27,6 +29,8 @@ var JobSchem = mongoose.Schema({
   name : {type: String, required: true},
   percent : {type: String, required: true},
   count : {type: String, required: true},
+  userToken : {type : String},
+  ifFinish : {type : String },
   token : {type: String}
 });
 
